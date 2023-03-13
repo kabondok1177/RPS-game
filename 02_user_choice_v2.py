@@ -1,0 +1,23 @@
+# Version 2 - error message included when calling function
+
+
+# Funtions goes here
+def choice_checker(question, error):
+    valid = False
+    while not valid:
+
+        # Ask user for choice (amd put choice in lowercase)
+        response = input(question).lower()
+
+        if response == "r" or response == "rock":
+            return "rock"
+        elif response == "p" or response == "paper":
+            return "paper"
+        elif response == "s" or response == "scissors":
+            return "scissor"
+
+        # check for exit code...
+        elif response == "xxx":
+            return 'xxx'
+        else:
+            print(error)
