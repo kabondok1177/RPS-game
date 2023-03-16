@@ -38,8 +38,21 @@ while end_game == "no":
     # Rounds Heading
     print()
     if rounds == "" :
-        heading = "Continous Mode: " \
+        heading = "Continuous Mode: " \
                   "Round {}".format(rounds_played + 1)
     else:
         heading = "Round {} of " \
-                   "{}".format(rounds_played )
+                   "{}".format(rounds_played + 1, rounds)
+
+    print(heading)
+    choose = input("() or 'xxx' to "
+                   "end ".format(choose_instrution))
+
+    # End game if exit code is typed
+    if choose == "xxx":
+        break
+
+# Put end game content here
+print("Thank you for playing")
+
+
