@@ -92,14 +92,23 @@ while rounds_played < rounds:
     user_choice = choice_checker(choose_instruction, rps_list,
                                  choose_error)
 
+    # get computer choice
+    comp_choice = random.choice(rps_list[:-1])
+    point(comp_choice, end="\t")
+
+    # compare choices
+
     # End game if exit code is typed
     if user_choice == "xxx":
         break
 
+    #  **** rest of loop / game *****
+    print("You chose {}".format(choose))
+
     rounds_played += 1
 
 print("we are done")
-    # Ask user if they want to see their game history.
+# Ask user if they want to see their game history.
 # If 'yes' show game history
 
 # Show game statistics
