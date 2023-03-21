@@ -1,3 +1,6 @@
+import random
+
+
 # Functions go here
 def check_rounds():
     while True:
@@ -38,11 +41,11 @@ def choice_checker(question, valid_list, error):
 
         for item in valid_list:
             if response == item[0] or response == item:
-                return response
+                return item
 
-            # output error if item not in list
-            print(error)
-            print()
+        # output error if item not in list
+        print(error)
+        print()
 
 
 # Main routine goes here
@@ -64,15 +67,13 @@ choose_instruction = "Please choose rock (r), paper (p) or scissors"
 # Ask user for # of rounds, <enter> for infinite mode
 rounds = check_rounds()
 
+if rounds == "":
+    mode = "infinite"
+    rounds = 5
+
 while rounds_played < rounds:
 
     # Start of Game Play Loop
-
-    # Rounds Heading
-    print()
-    if rounds == "":
-        mode = "infinite"
-        rounds = 5
 
     if mode == "infinite":
         rounds += 1
@@ -94,7 +95,6 @@ while rounds_played < rounds:
 
     # get computer choice
     comp_choice = random.choice(rps_list[:-1])
-    point(comp_choice, end="\t")
 
     # compare choices
 
@@ -103,7 +103,7 @@ while rounds_played < rounds:
         break
 
     #  **** rest of loop / game *****
-    print("You chose {}".format(choose))
+    print("You chose {}".format(user_choice))
 
     rounds_played += 1
 
