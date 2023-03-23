@@ -11,8 +11,14 @@ for item in rps_list:
         # Compare options
         if user_choice == comp_choice:
             result = "tie"
+        elif user_choice == "rock" and comp_choice == "scissors":
+            result = "win"
+        elif user_choice == "paper" and comp_choice == "rock":
+            result = "win"
+        elif user_choice == "scissors" and comp_choice == "paper":
+            result = "win"
         else:
-            result = "not tie"
+            result = "loss"
 
         print(f"({comp_choice} vs {user_choice}: {result}")
 

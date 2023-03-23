@@ -62,6 +62,8 @@ mode = "regular"
 
 # ask user for # of rounds then loop...
 rounds_played = 0
+
+
 choose_instruction = "Please choose rock (r), paper (p) or scissors"
 
 # Ask user for # of rounds, <enter> for infinite mode
@@ -102,8 +104,19 @@ while rounds_played < rounds:
     if user_choice == "xxx":
         break
 
-    #  **** rest of loop / game *****
-    print("You chose {}".format(user_choice))
+    # Compare options
+    if user_choice == comp_choice:
+        result = "tie"
+    elif user_choice == "rock" and comp_choice == "scissors":
+        result = "win"
+    elif user_choice == "paper" and comp_choice == "rock":
+        result = "win"
+    elif user_choice == "scissors" and comp_choice == "paper":
+        result = "win"
+    else:
+        result = "loss"
+
+    print(f"({comp_choice} vs {user_choice}: {result}")
 
     rounds_played += 1
 
