@@ -1,9 +1,9 @@
 # RPS Component 6 - Scoring System
 
 # Rounds won will be calculated (total - draw - lost)
-round_played = 0
+rounds_played = 0
 rounds_lost = 0
-round_drawn = 0
+rounds_drawn = 0
 
 # Results for testing purposes
 test_results = ["won", "won", "loss", "loss" "tie"]
@@ -14,9 +14,9 @@ for item in test_results:
 
     # Generate computer choice
 
-    results = item
+    result = item
 
-    if results == "tie":
+    if result == "tie":
         results = "It's a tie"
         rounds_drawn += 1
     elif result == "loss":
